@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Listado de alumnos</title>
+	<!-- vincular con framework bulma css -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+	
+	<style type="text/css">
+		#in, #ini{
+			font-size: 50px; 
+			margin-left:  87px;
+		}
+		#inic{
+			margin-left: 87px;
+		}
+		#inici{
+			text-align: center; 
+			font-size: 30px;
+		}
+		#lista{
+			margin-left: 105px; 
+			margin-right: 80px;
+		}
+		#u{
+			background-color:  #a8b0b0;
+		}
+		#datos{
+			margin-left: 107px;
+			margin-right: 80px;
+			background-color:  #84b368;
+
+		}
+	</style>
+
+</head>
+
+<body>
+    <script type="text/javascript">
+    	//agregar texto al HTML
+         $(document).ready(function(){
+         	$('#in').text('Programación para Web');
+         	$('#ini').text('Grupo 5to. B');
+
+         	/*  Diferentes formas de agregar Texto
+         	$('#inic').text($('#inic').text() + 'JOSE NABOR RAMIREZ MORFIN');
+         	$('#inic').append('José Nabor Ramírez Morfín');*/
+
+         	$('#inic').html("Profesor: <b>José Nabor Ramíres Morfín</b>");
+         	$('#inici').text('Listado de Alumnos');
+            
+            //cambiar color de los nombres
+            $("li").hover(function(){
+			$(this).css("color", " #7cd148 ");
+			}, function(){
+			$(this).css("color", "black");
+		    });
+            
+            //cambio de cursor
+            $('#lista').css('cursor','pointer'); 
+
+            //Reultado del alumno
+            $('ol li').click(function() 
+               { 
+                  $("#datos").append($(this).text());
+               });
+         });
+	</script>
+
+	<!-- Colocar hero banner de bulma -->
+	 <section class="hero is-primary">
+     <div class="hero-body">
+       <div class="container" >
+        <h1 class="title" style="font-size: 35px;">Universidad de Colima</h1>
+        <h2 class="subtitle">Facultad de Telematica</h2>
+       </div>
+     </div>
+     </section>
+
+	<!-- Aplicar clases y elementos de bulma para dar acomodo al contenido -->
+	<h1 id="in"></h1>
+	<h2 id="ini"></h2>
+	<h3 id="inic">Profesor: </h3>
+	<p id="inici"></p>
+	<div class="content table is-striped">
+	<table class="table">
+	<ol id="lista">
+		<li id="u">AGUILAR VAZQUEZ ANA ISABEL</li>
+		<li>ANDRADE CERVANTES ALANNAH ELIZABETH</li>
+		<li id="u">CHAVEZ AGUIRRE RAUL ANTONIO</li>
+		<li>CHAVEZ MADRIGAL RICARDO</li>
+		<li id="u">COBIAN VILLA KARLA NAYELI</li>
+		<li>ESTUDILLO MENDOZA ANGEL GUSTAVO</li>
+		<li id="u">GUTIERREZ RODRIGUEZ CHRISTIAN ULISES</li>
+		<li>HARO LOZANO JOSE</li>
+		<li id="u">LOPEZ MARTINEZ DAVID ALBERTO</li>
+		<li>MOJICA GALVEZ VICTOR ALBERTO</li>
+		<li id="u">PASTOR MARTINEZ CARLOS ISMAEL</li>
+		<li>RAMIREZ MORFIN MARCELO</li>
+		<li id="u">RAMOS NABOR MARTIN</li>
+		<li>ROBLES ADALID IVAN FERNANDO</li>
+	</ol>
+	</table>
+    </div>
+	<div id="datos">Resultado: </div>
+
+	<!-- Colocar Footer de bulma -->
+	<footer class="footer">
+      <div class="content has-text-centered">
+      <p>
+      <strong>Desarrollado</strong> Por <a href="https://jgthms.com">Gustavo</a>
+      </p>
+      </div>
+    </footer>
+
+</body>
+</html>
